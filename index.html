@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Répondez à 10 questions et découvrez les outils d'intelligence artificielle générative adaptés à vos besoins.">
+<title>J.2.0 — Trouvez l’IA qui vous correspond</title>
+<style>
+:root{--ink:#171735;--muted:#65627e;--paper:#f8f5ff;--card:#fff;--line:#e9e1f5;--blue:#6538ed;--violet:#c13bd5;--mint:#dff8ee;--shadow:0 20px 55px rgba(72,42,130,.12);--pink:#ff5b9d;--teal:#20b9b4;--gold:#ffbd45}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 8% 4%,#eadcff 0,transparent 30%),radial-gradient(circle at 95% 10%,#d9f7f5 0,transparent 28%),radial-gradient(circle at 50% 95%,#ffe6f0 0,transparent 25%),var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button{font:inherit;cursor:pointer}.wrap{max-width:1000px;margin:auto;padding:26px 22px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:42px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.03em}.logo{width:48px;height:48px;border-radius:17px;background:linear-gradient(145deg,#6728ed 5%,#b33cdb 52%,#16b9b5 100%);display:grid;place-items:center;color:white;font-size:15px;font-weight:950;letter-spacing:-.08em;font-style:italic;box-shadow:0 9px 22px #8d58d955;position:relative}.logo:after{content:"";position:absolute;inset:5px;border:1.5px solid #ffffff9c;border-radius:13px}.tag{font-size:12px;color:#6933c7;background:#f0e7ff;border:1px solid #e3d2ff;border-radius:30px;padding:8px 14px;font-weight:800}
+.hero{text-align:center;max-width:760px;margin:0 auto 32px}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.04;letter-spacing:-.055em;margin:12px 0 16px}.hero h1 span{background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:18px;color:var(--muted);margin:0 auto;max-width:620px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:clamp(22px,4vw,42px);max-width:760px;margin:0 auto}.progressline{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:13px;font-weight:700;margin-bottom:12px}.track{height:7px;background:#edf0f7;border-radius:20px;overflow:hidden;margin-bottom:30px}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--violet));transition:width .25s}
+.qnum{color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.question{font-size:clamp(23px,4vw,31px);line-height:1.2;letter-spacing:-.035em;margin:8px 0}.hint{color:var(--muted);margin:0 0 22px;font-size:14px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.choice{border:1.5px solid var(--line);border-radius:15px;padding:15px;text-align:left;background:white;color:var(--ink);display:flex;gap:12px;align-items:flex-start;min-height:72px;transition:.18s}.choice:hover{border-color:#aab8f5;transform:translateY(-1px)}.choice.selected{border-color:#8c5af1;background:linear-gradient(120deg,#f5efff,#fff3fa);box-shadow:inset 0 0 0 1px #8c5af1}.choice .emoji{font-size:22px;line-height:1.3}.choice strong{display:block;font-size:14px}.choice small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.choice .tick{margin-left:auto;color:var(--blue);font-weight:900;opacity:0}.choice.selected .tick{opacity:1}.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}.btn{border:0;border-radius:13px;padding:12px 20px;font-weight:800}.btn.primary{background:linear-gradient(105deg,#6b32ee 0%,#bd39cf 52%,#16aaa9 100%);color:white;box-shadow:0 10px 24px #8b54d744}.btn.secondary{background:#f0f2f8;color:#526079}.btn:disabled{opacity:.35;cursor:not-allowed}
+.introgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px auto 0;max-width:760px}.mini{background:#ffffffb8;border:1px solid var(--line);border-radius:16px;padding:15px;text-align:center}.mini b{display:block;font-size:14px}.mini span{font-size:12px;color:var(--muted)}
+.resulthead{text-align:center;margin-bottom:25px}.resulthead h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.04em;margin:8px 0}.resulthead p{color:var(--muted);margin:0}.cards{display:grid;gap:14px}.tool{border:1px solid var(--line);border-radius:19px;padding:20px;background:white;display:grid;grid-template-columns:52px 1fr;gap:15px}.toolicon{height:52px;width:52px;border-radius:17px;background:linear-gradient(145deg,#f0e8ff,#e0f9f5);display:grid;place-items:center;font-size:26px}.tool h3{margin:0;font-size:19px;letter-spacing:-.02em}.meta{font-size:12px;color:#5266c5;font-weight:800;margin:2px 0 7px}.tool p{margin:0;color:var(--muted);font-size:14px}.why{margin-top:10px;color:#36435c;font-size:13px}.toolfooter{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;flex-wrap:wrap}.free{font-size:11px;background:var(--mint);color:#176b50;padding:5px 9px;border-radius:30px;font-weight:800}.visit{color:var(--blue);text-decoration:none;font-weight:800;font-size:13px}.visit:hover{text-decoration:underline}.note{background:#f7f8fc;border:1px solid var(--line);border-radius:15px;padding:15px;color:var(--muted);font-size:12px;margin-top:20px}.resultactions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}.empty{text-align:center;color:var(--muted);padding:25px}.hidden{display:none!important}
+footer{text-align:center;color:#8490a6;font-size:12px;margin:35px auto 0;max-width:700px}
+@media(max-width:620px){.wrap{padding:18px 14px 40px}.top{margin-bottom:30px}.tag{display:none}.choices{grid-template-columns:1fr}.choice{min-height:62px}.introgrid{grid-template-columns:1fr}.panel{border-radius:20px}.tool{grid-template-columns:42px 1fr;padding:15px}.toolicon{width:42px;height:42px;font-size:22px}}
+
+.hero-brand{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 22px;flex-wrap:wrap}
+.hero-logo{font-size:clamp(34px,6vw,54px);font-weight:950;font-style:italic;letter-spacing:-.09em;line-height:1;color:#21164d;padding:7px 20px 12px 4px;border-right:3px solid transparent;border-image:linear-gradient(180deg,#7b42ed,#22b8b5) 1;position:relative}
+.hero-logo:after{content:"";position:absolute;left:3px;right:20px;bottom:2px;height:5px;border-radius:8px;background:linear-gradient(90deg,#7040ed,#d34eb8,#20b8b4);transform:rotate(-5deg)}
+.hero-tagline{font-size:clamp(18px,3vw,26px);font-weight:750;letter-spacing:-.04em;color:#282044}
+.brand-sub{display:block;font-size:9px;color:#8a7caa;font-weight:800;letter-spacing:.13em}
+.logo{font-size:14px!important;font-weight:950!important;letter-spacing:-.08em;font-style:italic}
+.eyebrow{color:#7745d9}
+.hero h1 span{background:linear-gradient(90deg,#6735ee,#d33fba,#17aaa9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.panel{backdrop-filter:blur(10px)}
+.choice{transition:transform .18s,border-color .18s,background .18s}
+.choice:hover{border-color:#b99af7;transform:translateY(-2px);box-shadow:0 8px 22px #6f43bd12}
+.btn.primary{background:linear-gradient(105deg,#6b32ee 0%,#bd39cf 52%,#16aaa9 100%);color:white;box-shadow:0 10px 24px #8b54d744}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">J.2.0</div><span>J.2.0 <small style="display:block;font-size:10px;color:#8a7caa;font-weight:700;letter-spacing:.08em;text-transform:uppercase">le bon outil, au bon moment</small></span></div><div class="tag">100 % gratuit à utiliser</div></header>
+<section class="hero" id="hero">
+<div class="eyebrow">EXPLOREZ • TESTEZ • CRÉEZ</div>
+<h1>Quelle IA est faite <span>pour vous&nbsp;?</span></h1>
+<p>Il existe des dizaines d'outils d'intelligence artificielle. Répondez à 10 questions et découvrez ceux qui pourraient vraiment vous aider.</p>
+<div class="introgrid"><div class="mini"><b>🧭 10 questions</b><span>simples et rapides</span></div><div class="mini"><b>🎯 Vos besoins</b><span>des conseils personnalisés</span></div><div class="mini"><b>🔗 Liens directs</b><span>vers les outils gratuits</span></div></div>
+</section>
+<main>
+<section class="panel" id="quiz">
+<div class="progressline"><span id="stepLabel">Question 1 sur 10</span><span id="percent">10 %</span></div><div class="track"><div class="fill" id="progress"></div></div>
+<div class="qnum" id="qnum">QUESTION 01</div><h2 class="question" id="question"></h2><p class="hint" id="hint"></p>
+<div class="choices" id="choices"></div>
+<div class="actions"><button class="btn secondary" id="back" disabled>← Retour</button><button class="btn primary" id="next" disabled>Continuer →</button></div>
+</section>
+<section class="panel hidden" id="results">
+<div class="resulthead"><div class="eyebrow">Votre sélection personnalisée</div><h2>Voici les IA à découvrir 💡</h2><p id="summary"></p></div>
+<div class="cards" id="recommendations"></div>
+<div class="note">ℹ️ Les outils présentés proposent une formule gratuite, mais certaines fonctions sont limitées (nombre d'utilisations, taille des fichiers ou fonctionnalités). Les offres changent régulièrement. Vérifiez toujours les conditions sur le site officiel avant de déposer des données personnelles ou confidentielles.</div>
+<div class="resultactions"><button class="btn primary" id="restart">↻ Refaire le questionnaire</button><button class="btn secondary" id="print">Imprimer / enregistrer en PDF</button></div>
+</section>
+</main>
+<footer>Un outil d'orientation pour découvrir l'IA générative. Les réponses restent dans votre navigateur et ne sont pas envoyées à un serveur.</footer>
+</div>
+<script>
+const questions=[
+{q:"Pour quoi aimeriez-vous utiliser une IA en priorité ?",hint:"Vous pouvez choisir plusieurs réponses.",multi:true,opts:[
+["✍️","Écrire ou améliorer des textes","Mails, courriers, publications, reformulation",["writing","general"]],
+["🔎","Trouver des informations","Faire des recherches et comparer des sources",["research","general"]],
+["📚","Comprendre des documents","Résumer des PDF, cours ou dossiers",["documents","writing"]],
+["🎨","Créer des images ou des visuels","Affiches, illustrations, publications",["images","design"]],
+["📊","Créer des présentations","Diaporamas et supports professionnels",["slides","design"]],
+["🌍","Traduire des textes","Traductions et correction linguistique",["translation","writing"]],
+["🎬","Créer de l'audio ou de la vidéo","Voix, musique, vidéos",["media","design"]],
+["💻","Programmer ou créer des outils","Code, sites web, automatisations",["coding","general"]]
+]},
+{q:"Dans quel contexte utiliserez-vous surtout l'IA ?",hint:"Choisissez la situation la plus proche de votre quotidien.",multi:false,opts:[
+["🏢","Au travail","Tâches administratives, communication, organisation",["work","writing"]],
+["🎓","Pour apprendre ou me former","Cours, exercices, explications",["learning","documents"]],
+["🏠","Dans ma vie personnelle","Projets, loisirs, démarches du quotidien",["personal","general"]],
+["🚀","Pour mon activité ou mon entreprise","Clients, marketing, productivité",["business","design"]]
+]},
+{q:"Quel type de résultat attendez-vous le plus souvent ?",hint:"Cela aide à distinguer les assistants polyvalents des outils spécialisés.",multi:true,opts:[
+["📝","Un texte prêt à retravailler","Rédaction, idées, correction",["writing","general"]],
+["📌","Une réponse avec des sources","Informations vérifiables et liens",["research"]],
+["📄","Une synthèse de mes propres fichiers","Documents, notes, rapports",["documents"]],
+["🖼️","Un visuel ou une image","Création graphique",["images","design"]],
+["📽️","Un diaporama","Présentation structurée",["slides","design"]],
+["🎧","Un contenu audio ou vidéo","Musique, voix, montage",["media"]]
+]},
+{q:"Avez-vous besoin de travailler à partir de vos documents ?",hint:"Pensez aux PDF, Word, présentations, notes ou fichiers de cours.",multi:false,opts:[
+["📂","Oui, très souvent","Je veux poser des questions sur mes fichiers",["documents"]],
+["📎","Parfois","Cela pourrait m'être utile",["documents","general"]],
+["💬","Non, surtout à partir de mes questions","Je démarre avec une consigne écrite",["general","writing"]]
+]},
+{q:"Quel est votre besoin en matière de recherche d'informations ?",hint:"Choisissez ce qui vous correspond le mieux.",multi:false,opts:[
+["🧭","Des recherches récentes avec des sources","Je veux pouvoir vérifier les informations",["research"]],
+["💡","Des explications et des idées","Je cherche surtout à comprendre ou réfléchir",["general","learning"]],
+["📚","Des réponses à partir de mes documents","Je veux exploiter des sources que je fournis",["documents"]]
+]},
+{q:"Quel type de création vous intéresse ?",hint:"Vous pouvez choisir plusieurs réponses.",multi:true,opts:[
+["🎨","Images, affiches et publications","Visuels pour le web ou l'impression",["images","design"]],
+["📊","Présentations et diaporamas","Supports clairs et professionnels",["slides","design"]],
+["🎥","Vidéos","Clips, animations ou contenus courts",["media","design"]],
+["🎵","Musique et sons","Créer une chanson ou une ambiance sonore",["media"]],
+["✍️","Pas de création visuelle","Je privilégie le texte et les réponses",["writing","general"]]
+]},
+{q:"Quelle importance accordez-vous à la facilité d'utilisation ?",hint:"Il n'y a pas de mauvaise réponse.",multi:false,opts:[
+["🌱","Très importante","Je débute et je veux être guidé(e)",["beginner","general"]],
+["🙂","Importante","Je suis à l'aise avec les outils courants",["general"]],
+["🧠","Secondaire","Je peux apprendre à utiliser un outil plus avancé",["advanced","coding"]]
+]},
+{q:"Quelle langue souhaitez-vous utiliser principalement ?",hint:"Certains outils sont plus confortables dans certaines langues.",multi:false,opts:[
+["🇫🇷","Français","Je veux travailler principalement en français",["french","general"]],
+["🌐","Plusieurs langues","Je travaille dans différentes langues",["translation","research"]],
+["🇬🇧","Anglais","L'anglais ne me pose pas de problème",["english","coding"]]
+]},
+{q:"Avez-vous une préférence concernant vos outils habituels ?",hint:"Cela peut faciliter votre travail au quotidien.",multi:false,opts:[
+["🪟","Microsoft 365 / Windows","Word, Excel, PowerPoint, Outlook",["microsoft","work"]],
+["🔵","Google","Gmail, Docs, Drive, Slides",["google","work"]],
+["🎨","Canva et outils créatifs","Je crée souvent des supports visuels",["design","images"]],
+["🤷","Aucune préférence","Je suis ouvert(e) aux propositions",["general"]]
+]},
+{q:"Quel est votre critère le plus important ?",hint:"Les recommandations privilégient les outils avec une formule gratuite.",multi:false,opts:[
+["🆓","Pouvoir commencer sans payer","Le gratuit est indispensable",["free"]],
+["⚖️","Un bon équilibre entre simplicité et possibilités","Je veux un outil polyvalent",["general"]],
+["🔐","La confidentialité et la maîtrise des données","Je fais attention aux informations partagées",["privacy"]],
+["🎯","La meilleure qualité pour mon besoin","Je préfère un outil spécialisé",["specialist"]]
+]}
+];
+const tools=[
+{id:"chatgpt",name:"ChatGPT",icon:"🤖",url:"https://chatgpt.com/",kind:"Assistant polyvalent",desc:"Pour rédiger, reformuler, réfléchir, apprendre, analyser des fichiers et obtenir de l'aide sur de nombreuses tâches.",tags:["general","writing","learning","work","personal","business","beginner","french","free"],why:"Un bon point de départ si vous cherchez un assistant polyvalent et facile à prendre en main."},
+{id:"claude",name:"Claude",icon:"🟠",url:"https://claude.ai/",kind:"Rédaction et analyse",desc:"Très intéressant pour travailler des textes longs, structurer des idées et analyser des contenus.",tags:["writing","documents","learning","work","business","french","specialist"],why:"À essayer pour les écrits détaillés et les documents qui demandent de la nuance."},
+{id:"gemini",name:"Google Gemini",icon:"💎",url:"https://gemini.google.com/",kind:"Assistant polyvalent",desc:"Pour poser des questions, explorer des idées et travailler dans l'écosystème Google.",tags:["general","writing","research","learning","google","work","french","beginner","free"],why:"Un choix pratique si vous utilisez déjà les services Google."},
+{id:"copilot",name:"Microsoft Copilot",icon:"🪟",url:"https://copilot.microsoft.com/",kind:"Assistant et productivité",desc:"Pour obtenir de l'aide, rédiger, explorer des idées et travailler dans l'environnement Microsoft.",tags:["general","writing","research","microsoft","work","business","beginner","french"],why:"À découvrir si votre environnement quotidien est organisé autour de Microsoft."},
+{id:"perplexity",name:"Perplexity",icon:"🔎",url:"https://www.perplexity.ai/",kind:"Recherche avec sources",desc:"Un moteur de réponses qui met en avant des sources pour approfondir et vérifier les informations.",tags:["research","french","english","learning","work","business","specialist"],why:"Particulièrement adapté lorsque vous voulez retrouver les sources d'une réponse."},
+{id:"canva",name:"Canva",icon:"🎨",url:"https://www.canva.com/",kind:"Création visuelle",desc:"Pour concevoir des affiches, publications, présentations et supports visuels avec des fonctions d'IA.",tags:["images","design","slides","business","work","beginner","french","free","specialist"],why:"Un outil accessible pour transformer des idées en supports visuels."},
+{id:"notebooklm",name:"NotebookLM",icon:"📚",url:"https://notebooklm.google.com/",kind:"Documents et apprentissage",desc:"Pour interroger un ensemble de documents, obtenir des synthèses et mieux comprendre ses sources.",tags:["documents","learning","research","google","french","specialist"],why:"Très pertinent si vous souhaitez apprendre ou travailler à partir de vos propres sources."},
+{id:"deepl",name:"DeepL",icon:"🌍",url:"https://www.deepl.com/translator",kind:"Traduction",desc:"Pour traduire des textes et améliorer la fluidité de formulations dans différentes langues.",tags:["translation","writing","french","english","work","business","beginner","specialist"],why:"Une solution spécialisée à garder sous la main pour les traductions."},
+{id:"gamma",name:"Gamma",icon:"📊",url:"https://gamma.app/",kind:"Présentations",desc:"Pour créer rapidement des présentations et des documents visuels à partir d'une idée ou d'un texte.",tags:["slides","design","business","work","beginner","specialist"],why:"Utile pour passer d'un plan ou d'un texte à une première présentation."},
+{id:"suno",name:"Suno",icon:"🎵",url:"https://suno.com/",kind:"Création musicale",desc:"Pour générer des chansons et des idées musicales à partir d'une description ou de paroles.",tags:["media","design","personal","specialist"],why:"À tester si votre objectif est la création musicale."},
+{id:"mistral",name:"Le Chat de Mistral",icon:"🧠",url:"https://chat.mistral.ai/",kind:"Assistant polyvalent",desc:"Assistant conversationnel pour rédiger, résumer, poser des questions et explorer des idées.",tags:["general","writing","research","french","work","beginner","free"],why:"Une alternative intéressante, notamment pour échanger en français."},
+{id:"githubcopilot",name:"GitHub Copilot",icon:"💻",url:"https://github.com/features/copilot",kind:"Aide au code",desc:"Un assistant de programmation qui aide à écrire, comprendre et compléter du code.",tags:["coding","advanced","english","specialist"],why:"À envisager si vous souhaitez apprendre à programmer ou développer un projet."}
+];
+let current=0,answers=Array(questions.length).fill(null);
+const $=id=>document.getElementById(id);
+function render(){
+ const q=questions[current];$("stepLabel").textContent=`Question ${current+1} sur 10`;$("percent").textContent=`${Math.round((current+1)*10)} %`;$("progress").style.width=`${(current+1)*10}%`;$("qnum").textContent=`QUESTION ${String(current+1).padStart(2,"0")}`;$("question").textContent=q.q;$("hint").textContent=q.hint;$("choices").innerHTML="";
+ q.opts.forEach((o,i)=>{const selected=q.multi?(answers[current]||[]).includes(i):answers[current]===i;const b=document.createElement("button");b.className="choice"+(selected?" selected":"");b.type="button";b.innerHTML=`<span class="emoji">${o[0]}</span><span><strong>${o[1]}</strong><small>${o[2]}</small></span><span class="tick">✓</span>`;b.onclick=()=>{if(q.multi){let a=answers[current]||[];answers[current]=selected?a.filter(x=>x!==i):[...a,i]}else answers[current]=i;render()};$("choices").appendChild(b)});
+ $("back").disabled=current===0;$("next").disabled=q.multi?!(answers[current]||[]).length:answers[current]===null;$("next").textContent=current===9?"Voir mes recommandations →":"Continuer →";
+}
+function selectedTags(){
+ const tags=[];questions.forEach((q,qi)=>{const a=answers[qi];if(a===null)return;(Array.isArray(a)?a:[a]).forEach(i=>tags.push(...q.opts[i][3]))});return tags;
+}
+function recommend(){
+ const tags=selectedTags();let scored=tools.map(t=>{let score=0;t.tags.forEach(tag=>{score+=tags.filter(x=>x===tag).length});if(t.tags.includes("free"))score+=1;if(tags.includes("privacy")&&!["chatgpt","claude","gemini","copilot","perplexity","mistral"].includes(t.id))score-=1;return {...t,score}}).sort((a,b)=>b.score-a.score);
+ const chosen=scored.filter(t=>t.score>0).slice(0,5);return chosen.length?chosen:scored.slice(0,3);
+}
+function showResults(){
+ $("quiz").classList.add("hidden");$("hero").classList.add("hidden");$("results").classList.remove("hidden");
+ const names=recommend();$("summary").textContent="Voici les outils qui correspondent le mieux à vos réponses. Commencez par les deux premiers, puis explorez les autres selon vos besoins.";
+ $("recommendations").innerHTML="";
+ names.forEach((t,i)=>{const card=document.createElement("article");card.className="tool";card.innerHTML=`<div class="toolicon">${t.icon}</div><div><h3>${i+1}. ${t.name}</h3><div class="meta">${t.kind}</div><p>${t.desc}</p><div class="why"><strong>Pourquoi ce choix ?</strong> ${t.why}</div><div class="toolfooter"><span class="free">✓ Formule gratuite disponible*</span><a class="visit" href="${t.url}" target="_blank" rel="noopener noreferrer">Découvrir ${t.name} ↗</a></div></div>`;$("recommendations").appendChild(card)});
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+$("next").onclick=()=>{if(current<9){current++;render()}else showResults()};
+$("back").onclick=()=>{if(current>0){current--;render()}};
+$("restart").onclick=()=>{current=0;answers=Array(questions.length).fill(null);$("results").classList.add("hidden");$("quiz").classList.remove("hidden");$("hero").classList.remove("hidden");render();window.scrollTo({top:0,behavior:"smooth"})};
+$("print").onclick=()=>window.print();
+render();
+</script>
+</body></html>
